@@ -1,0 +1,19 @@
+body {
+	background: url("../images/MGS3_background.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.container {
+	border: 1px solid grey;
+	width: 606px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.box {
+	float: left;
+	height: 200px;
+	width: 200px;
+	border: 1px solid grey;
+}

@@ -1,0 +1,18 @@
+body {
+	background: url("../images/Kept_you_waiting.jpg");
+	text-align: center;
+	color: #F8F8F8;
+	font-size: 32px; 
+}
+
+#start {
+	margin-top: 120px;
+	margin-left: 350px;
+	margin-right: 350px;
+	border: 3px groove #10295A;
+	border-radius: 25px;
+	border-width: 20px;
+	padding: 10px;
+	font-size: 20px; 
+
+}

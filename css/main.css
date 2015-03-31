@@ -6,13 +6,13 @@ body {
 }
 
 #start {
-	margin-top: 120px;
-	margin-left: 350px;
-	margin-right: 350px;
-	border: 3px groove #10295A;
-	border-radius: 25px;
-	border-width: 20px;
+	margin-top: 170px;
+	margin-left: 500px;
+	margin-right: 500px;
+	border: 2px groove #10295A;
+	border-radius: 20px;
+	border-width: 15px;
 	padding: 10px;
-	font-size: 20px; 
-
+	font-size: 20px;
+	color: red; 
 }

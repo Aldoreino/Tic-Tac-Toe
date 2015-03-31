@@ -1,5 +1,11 @@
+.nav {
+	text-align: center;
+	color: white;
+	font-size: 24px;
+}
+
 body {
-	background: url("../images/MGS3_background.png");
+	background: url("../images/MGS_background.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -16,4 +22,39 @@ body {
 	height: 200px;
 	width: 200px;
 	border: 1px solid grey;
+}
+.player1 {
+	height: 300px;
+	width: 200px;
+	left: 1100px;
+	border: 1px solid grey;
+}
+
+#score1 {
+	position: absolute;
+	float: left;
+	height: 100px;
+	width: 80px;
+	color: red;
+	left: 1100px;
+	bottom: 300px;
+}
+
+.player2 {
+	left: 300px;
+	height: 300px;
+	width: 200px;
+	left: 1000px;
+	border: 1px solid grey;
+	float: right;
+}
+
+#score2 {
+	position: absolute;
+	height: 100px;
+	width: 80px;
+	color: red;
+	right: 1100px;
+	bottom: 300px;
+
 }

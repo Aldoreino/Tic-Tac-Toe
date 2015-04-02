@@ -1,34 +1,51 @@
-.nav {
+.head {
 	text-align: center;
 	color: white;
 	font-size: 24px;
+	font-family: Play, sans-serif;
 }
 
 body {
-	background: url("../images/MGS_background.jpg");
+	background-image: "/images/background0.png";
 	background-size: cover;
 	background-repeat: no-repeat;
+	font-family: Play, sans-serif;
 }
 
+/* the actual game area */
+
 .container {
-	border: 1px solid grey;
+	border: 1px solid transparent;
 	width: 606px;
 	margin: 0 auto;
 	margin-top: 50px;
+	border-radius: 20px;
 }
 
 .box {
 	float: left;
 	height: 200px;
 	width: 200px;
-	border: 1px solid grey;
+	border: 1px solid black;
+	border-radius: 20px;
+	background-color: grey;
 }
+
+/* the position of player 1's character */
+
 .player1 {
-	height: 300px;
-	width: 200px;
-	left: 1100px;
+	background: url("../images/raiden_pose.jpg");
+	background-size: cover;
+	height: 225px;
+	width: 180px;
 	border: 1px solid grey;
+	border-radius: 20px;
+	position: absolute;
+	left: 1100px;
+	top: 100px;
 }
+
+/* the position of player 1's score keeper */
 
 #score1 {
 	position: absolute;
@@ -38,16 +55,24 @@ body {
 	color: red;
 	left: 1100px;
 	bottom: 300px;
+	font-size: 18px;
 }
 
+/* the position of player 2's character */
+
 .player2 {
-	left: 300px;
-	height: 300px;
-	width: 200px;
-	left: 1000px;
+	background: url("../images/solid_snake.jpg");
+	background-size: cover;
+	height: 225px;
+	width: 180px;
 	border: 1px solid grey;
-	float: right;
+	border-radius: 20px;
+	position: absolute;
+	right: 1100px;
+	top: 100px;
 }
+
+/* the position of player 2's score keeper */
 
 #score2 {
 	position: absolute;
@@ -56,5 +81,6 @@ body {
 	color: red;
 	right: 1100px;
 	bottom: 300px;
+	font-size: 18px;
 
 }

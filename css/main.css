@@ -2,7 +2,13 @@ body {
 	background: url("../images/Kept_you_waiting.jpg");
 	text-align: center;
 	color: #F8F8F8;
-	font-size: 32px; 
+	font-size: 32px;
+	font-family: Play, sans-serif;
+}
+
+#head {
+	font-size: 24px;
+	font-family: Play, sans-serif;
 }
 
 #start {

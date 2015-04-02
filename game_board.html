@@ -3,12 +3,14 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="css/other.css">
+		<link href='http://fonts.googleapis.com/css?family=Play:700' rel='stylesheet' type='text/css'>
+
 </head>
-<body>
-	<div class="nav">Tic Tac-tical Toe</div>
-<!-- The area where the game will be played -->
+<body ng-controller="ticTacToeController as ticTacToe">
+	<div class="head">Tic Tac-tical Toe</div>
+<!-- a container for 9 smaller boxes where the game is played -->
 	<div class="container">
-		<div class="box"></div>
+		<div class="box" onclick="click()"></div>
 		<div class="box"></div>
 		<div class="box"></div>
 		<div class="box"></div>
@@ -20,12 +22,17 @@
 	</div>
 <!-- player 1's score tracker -->
 	<div class="player1">
-	<div id="score1">Player 1 score:</div>
 	</div>
+	<div id="score1">Player 1 score:</div>
 <!-- player 2's score tracker -->
 	<div class="player2">
-	<div id="score2">Player 2 score:</div>
 	</div>
+	<div id="score2">Player 2 score:</div>
+</div>
 
+
+	<script src="js/app.js"></script>
+ 	<script src="js/background_rotate.js"></script>
 </body>
+	
 </html>

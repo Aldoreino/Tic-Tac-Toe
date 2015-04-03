@@ -23,12 +23,14 @@ body {
 }
 
 .box {
+	display: block;
 	float: left;
 	height: 200px;
 	width: 200px;
 	border: 1px solid black;
 	border-radius: 20px;
 	background-color: grey;
+	background-size: cover;
 }
 
 /* the position of player 1's character */
@@ -83,4 +85,10 @@ body {
 	bottom: 300px;
 	font-size: 18px;
 
+}
+
+.backgroundImage {
+	width: 10px;
+	height: auto;
+}
 }

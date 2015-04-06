@@ -4,16 +4,19 @@
 		.module('ticTacToeApp')
 		.controller('ticTacToeController', ticTacToeController);
 
+		ticTacToeController.$inject = ['scope', '$firebaseObject', '$firebaseArray'];
 
 		// the controller itself (allows acces between the model, or data, and the view, or user interface)
-		function ticTacToeController(){
+		function ticTacToeController($scope, $firebaseObject, $firebaseArray){
 			// capture variable that references the Controller
 			var self = this;
 
 				// determines who is currently playing
 			var turn = 1;
-			// subject to change!!!!
+			// plays the game music
 			var snd = new Audio("audio.mp3/alert_sound.mp3");
+
+			var playerScore = 0;
 
 
 
@@ -25,6 +28,8 @@ function checkForWinnerX() {
 		if (self.board[0].space === "X" && self.board[1].space === "X" && self.board[2].space === "X"){
 			snd.play();
 			alert("X wins"); 
+			playerScore++;
+			console.log(playerScore);
 		}
 		if (self.board[3].space === "X" && self.board[4].space === "X" && self.board[5].space === "X"){
 			snd.play();
@@ -96,18 +101,22 @@ function checkForWinnerX() {
 			}
 		} // end of function "checkForWinnerO"
 
-		function Draw() {
-			if ("checkForWinnerO" && "checkForWinnerX" === false){
-				alert("the game is a draw!")
+		//function Draw() {
+		//	if (checkForWinnerO && checkForWinnerX === false){
+		//		alert("the game is a draw")
+		//	}
+		//}
+
+		function resetGame(){
+			if (checkForWinnerX === true){
+				self.board = null;
 			}
 		}
 
 
-
-
 			// prevents the clicked object from being overwritten
 			self.click = function($index) {
-					Draw();
+					
 
 					if (self.board[$index].space) {
 						return false;
@@ -126,6 +135,8 @@ function checkForWinnerX() {
 						turn--;
 					// check for winner after move has been made
 						checkForWinnerO();
+
+						resetGame();
 					}
 			};
 

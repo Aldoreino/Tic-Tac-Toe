@@ -11,9 +11,11 @@
 <!-- a container with 9 smaller boxes where the game is played -->
 	<div class="container">
 <!--  -->
+			<audio src="audio.mp3/yell_dead_cell.mp3" autoplay></audio> 
+
 		<div class="box" ng-repeat="cell in tttCtrl.board" ng-click="tttCtrl.click($index)" ng-bind="tttCtrl.board[$index].space"/></div>
 
-
+		<div class="reset">
  
 	</div>
 <!-- player 1's score tracker -->

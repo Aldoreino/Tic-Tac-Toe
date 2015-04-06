@@ -32,6 +32,8 @@ body {
 	background-color: grey;
 	opacity: 0.9;
 	background-size: cover;
+	text-align: center;
+	font-size: 150px;
 }
 
 /* the position of player 1's character */

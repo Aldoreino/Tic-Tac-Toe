@@ -4,10 +4,9 @@
 		.module('ticTacToeApp')
 		.controller('ticTacToeController', ticTacToeController);
 
-		ticTacToeController.$inject = ['scope', '$firebaseObject', '$firebaseArray'];
 
 		// the controller itself (allows acces between the model, or data, and the view, or user interface)
-		function ticTacToeController($scope, $firebaseObject, $firebaseArray){
+		function ticTacToeController(){
 			// capture variable that references the Controller
 			var self = this;
 
@@ -23,7 +22,7 @@
 			
 
 
-function checkForWinnerX() {
+	function checkForWinnerX() {
 		// checks for wins in a horizontal direction
 		if (self.board[0].space === "X" && self.board[1].space === "X" && self.board[2].space === "X"){
 			snd.play();
@@ -136,7 +135,6 @@ function checkForWinnerX() {
 					// check for winner after move has been made
 						checkForWinnerO();
 
-						resetGame();
 					}
 			};
 

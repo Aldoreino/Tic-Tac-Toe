@@ -12,9 +12,9 @@
 	<div class="container">
 <!--  -->
 			<audio src="audio.mp3/yell_dead_cell.mp3" autoplay></audio> 
-
+<!-- the repeat replicates the box 9 times -->
 		<div class="box" ng-repeat="cell in tttCtrl.board" ng-click="tttCtrl.click($index)" ng-bind="tttCtrl.board[$index].space"/></div>
-
+<!-- prototype reset button -->
 		<div class="reset">
  
 	</div>

@@ -4,17 +4,30 @@
 		.module('ticTacToeApp')
 		.controller('ticTacToeController', ticTacToeController);
 
+		ticTacToeController.$inject = ['$firebaseArray', '$firebaseObject']
+
 
 		// the controller itself (allows acces between the model, or data, and the view, or user interface)
-		function ticTacToeController(){
+		function ticTacToeController($firebaseArray, $firebaseObject){
+			
+			var location = ("https://tictacticaltoe.firebaseio.com/"); 
+
+			var ref = new Firebase(location);
+			var binding = $firebaseObject(ref);
+			binding.test = {test:"testing"};
+			binding.$save(binding);
+
 			// capture variable that references the Controller
+
+
+
 			var self = this;
 
 				// determines who is currently playing
 			var turn = 1;
 			// plays the game music
 			var snd = new Audio("audio.mp3/alert_sound.mp3");
-
+			var turnCounter = 0;
 			var playerScore = 0;
 
 
@@ -97,6 +110,8 @@
 			if (self.board[2].space === "O" && self.board[4].space === "O" && self.board[6].space === "O"){
 				snd.play();
 				alert("O wins");
+			}if (turnCounter === 9){
+				alert("Cats game!")
 			}
 		} // end of function "checkForWinnerO"
 
@@ -115,8 +130,10 @@
 
 			// prevents the clicked object from being overwritten
 			self.click = function($index) {
-					
-
+					turnCounter++;
+					if (turnCounter === 9){
+						alert("cats game!")
+					}
 					if (self.board[$index].space) {
 						return false;
 					}
@@ -127,7 +144,6 @@
 						turn++;
 					//checks for winner after move has been made
 						checkForWinnerX();
-					
 					}else {
 						self.board[$index].space = "O";
 
@@ -154,7 +170,7 @@
 		{space: null},
 		{space: null},
 		];
-
+		binding.$save();
 
 
 

@@ -10,34 +10,24 @@
 	// the controller itself (allows acces between the model, or data, and the view, or user interface)
 	function ticTacToeController($firebaseArray, $firebaseObject){
 		
-		// var location = ("https://tictacticaltoe.firebaseio.com/"); 
-
-		// var ref = new Firebase(location);
-		// var binding = $firebaseObject(ref);
-		// binding.test = {test:"testing"};
-		// binding.$save(binding);
+;
 
 		// capture variable that references the Controller
 		var self = this;
+
+		// calls the functions
 		self.game = getGame();
 		self.click = click;
 		self.pickPlayer = pickPlayer;
 		changeStatus();
 		self.playNum = -1;
-		console.log(self.game.boxes);
+
 
 
 		function pickPlayer(playNum){
 			self.playNum = playNum;
-			// console.log(playNum);
-			// if (playNum === 0){
-			// 	self.game.player1 = true;
-			// }
-			// if (playNum === 1){
-			// 	self.game.player2 = true;
-			// }
-			// self.game.$save();
 		}
+
 
 		function getGame(){
 			var ref = new Firebase("https://tictacticaltoe.firebaseio.com/game");
@@ -57,9 +47,9 @@
 			game.$save();
 			return game;
 
-
-
 		}
+
+
 		function click(num){
 			console.log(self.game.turn, self.playNum)
 			
@@ -75,8 +65,8 @@
 			self.game.$save();
 		}
 
-		// self.game.turn = 1;
-		// plays the game music
+
+		// plays the alert sound when a player wins
 		var snd = new Audio("audio.mp3/alert_sound.mp3");
 		var turnCounter = 0;
 		var playerScore = 0;
@@ -180,7 +170,7 @@ function checkForWinnerX() {
 	}
 })(); // ends IIFE
 
-			// determines who is currently playing
+	
 
 
 

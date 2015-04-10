@@ -21,6 +21,7 @@
 		var self = this;
 		self.game = getGame();
 		self.click = click;
+		changeStatus();
 		console.log(self.game.boxes);
 
 		function getGame(){
@@ -45,11 +46,11 @@
 
 		}
 		function click(num){
-			if (turn === 1){
+			if (self.game.turn === 1){
 				self.game.boxes[num].status = "O";
-				turn = 0;
+				self.game.turn = 0;
 			}else {
-				turn = 1;
+				self.game.turn = 1;
 				self.game.boxes[num].status = "X";
 			}
 			checkForWinnerX();
@@ -57,7 +58,7 @@
 			self.game.$save();
 		}
 
-		var turn = 1;
+		self.game.turn = 1;
 		// plays the game music
 		var snd = new Audio("audio.mp3/alert_sound.mp3");
 		var turnCounter = 0;
@@ -149,19 +150,13 @@ function checkForWinnerX() {
 		}
 	} // end of function "checkForWinnerO"
 
-	//function Draw() {
-	//	if (checkForWinnerO && checkForWinnerX === false){
-	//		alert("the game is a draw")
-	//	}
-	//}
-
-
 
 		// prevents the clicked object from being overwritten
 
 		function changeStatus(num){
-			self.game.boxes[num].status = "X"
-			self.game.$save();
+			if(self.game.boxes.status){
+				return false;
+			}
 		}
 
 

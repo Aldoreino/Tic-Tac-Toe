@@ -21,8 +21,23 @@
 		var self = this;
 		self.game = getGame();
 		self.click = click;
+		self.pickPlayer = pickPlayer;
 		changeStatus();
+		self.playNum = -1;
 		console.log(self.game.boxes);
+
+
+		function pickPlayer(playNum){
+			self.playNum = playNum;
+			// console.log(playNum);
+			// if (playNum === 0){
+			// 	self.game.player1 = true;
+			// }
+			// if (playNum === 1){
+			// 	self.game.player2 = true;
+			// }
+			// self.game.$save();
+		}
 
 		function getGame(){
 			var ref = new Firebase("https://tictacticaltoe.firebaseio.com/game");
@@ -35,21 +50,23 @@
 				{jd: 5, status: ""}, 
 				{id: 6, status: ""}, 
 				{id: 7, status: ""}, 
-				{id: 8, status: ""} ]
-			game.player1 = false;
-			game.player2 = false;
-			game.turnCounter = 0;
+				{id: 8, status: ""} ];
+			game.turn = 1;
+			 game.player1 = false;
+			 game.player2 = false;
 			game.$save();
-			return game;2
+			return game;
 
 
 
 		}
 		function click(num){
-			if (self.game.turn === 1){
+			console.log(self.game.turn, self.playNum)
+			
+			if (self.game.turn === 1 && self.playNum == 1){
 				self.game.boxes[num].status = "O";
-				self.game.turn = 0;
-			}else {
+				self.game.turn = 0; 
+			}else if (self.game.turn === 0 && self.playNum == 0){
 				self.game.turn = 1;
 				self.game.boxes[num].status = "X";
 			}
@@ -58,7 +75,7 @@
 			self.game.$save();
 		}
 
-		self.game.turn = 1;
+		// self.game.turn = 1;
 		// plays the game music
 		var snd = new Audio("audio.mp3/alert_sound.mp3");
 		var turnCounter = 0;
